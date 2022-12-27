@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 
-class Materialtile extends StatelessWidget {
+class Materialtile extends StatefulWidget {
   final icon;
   final String materialname;
-  const Materialtile({Key? key, required this.icon, required this.materialname})
-      : super(key: key);
+  final String subTitl;
+  const Materialtile({
+    Key? key,
+    required this.icon,
+    required this.materialname,
+    required this.subTitl,
+  }) : super(key: key);
 
+  @override
+  State<Materialtile> createState() => _MaterialtileState();
+}
+
+class _MaterialtileState extends State<Materialtile> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,7 +35,7 @@ class Materialtile extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: Container(
-                      child: icon,
+                      child: widget.icon,
                       padding: EdgeInsets.all(16),
                       color: Colors.blue[100],
                     ),
@@ -38,7 +48,7 @@ class Materialtile extends StatelessWidget {
                     children: [
                       //title
                       Text(
-                        materialname,
+                        widget.materialname,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
@@ -49,7 +59,7 @@ class Materialtile extends StatelessWidget {
                       ),
                       //subtitle
                       Text(
-                        '4 years..',
+                        widget.subTitl,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
@@ -60,7 +70,6 @@ class Materialtile extends StatelessWidget {
                   ),
                 ],
               ),
-              Icon(Icons.more_horiz),
             ],
           ),
         ),

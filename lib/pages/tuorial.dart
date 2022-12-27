@@ -26,8 +26,7 @@ class _TutoriallState extends State<Tutoriall> {
             color: Colors.black,
           ),
           onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(
-                builder: (BuildContext context) => HomePage()));
+            Navigator.pop(context);
           },
         ),
         actions: <Widget>[

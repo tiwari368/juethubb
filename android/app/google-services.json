@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "945709609398",
+    "project_id": "juethub-4b748",
+    "storage_bucket": "juethub-4b748.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945709609398:android:a1363676392c626c3a1117",
+        "android_client_info": {
+          "package_name": "com.example.juethubb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "945709609398-juoutd07t9e2h5ac6qp811htccpk067q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVPIyX3kuLIhENT24lzbVRXE7mm-3zTrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945709609398-juoutd07t9e2h5ac6qp811htccpk067q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

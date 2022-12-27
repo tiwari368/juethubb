@@ -1,13 +1,13 @@
+// ignore_for_file: avoid_returning_null_for_void
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:juethubb/pages/sidenavbar/acc.dart';
-import 'package:juethubb/pages/sidenavbar/chatt.dart';
 import 'package:juethubb/pages/sidenavbar/dashboard.dart';
 
+// ignore: camel_case_types
 class Side_bar extends StatelessWidget {
   const Side_bar({Key? key}) : super(key: key);
 
@@ -18,8 +18,8 @@ class Side_bar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text('xxx'),
-            accountEmail: Text('xxx.gmail.com'),
+            accountName: const Text('xxx'),
+            accountEmail: const Text('xxx.gmail.com'),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                   child: Image.asset(
@@ -34,54 +34,41 @@ class Side_bar extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.dashboard_customize_outlined),
-            title: Text('dashboard'),
+            leading: const Icon(Icons.dashboard_customize_outlined),
+            title: const Text('dashboard'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => DashBoard()));
+                  builder: (BuildContext context) => const DashBoard()));
             },
           ),
+          const Divider(),
           ListTile(
-            leading: Icon(Icons.chat_bubble_outline),
-            title: Text('Chat'),
+            leading: const Icon(Icons.account_circle),
+            title: const Text('myAccount'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => Chattychat()));
-            },
-          ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.people),
-            title: Text('Friends'),
-            onTap: () => null,
-          ),
-          ListTile(
-            leading: Icon(Icons.account_circle),
-            title: Text('myAccount'),
-            onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (BuildContext context) => Acc()));
+                  builder: (BuildContext context) => const Acc()));
             },
           ),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Setting'),
+            leading: const Icon(Icons.settings),
+            title: const Text('Setting'),
             onTap: () => null,
           ),
-          Divider(),
+          const Divider(),
           ListTile(
-            leading: Icon(Icons.description),
-            title: Text('Policies'),
-            onTap: () => null,
-          ),
-          ListTile(
-            leading: Icon(Icons.share),
-            title: Text('share'),
+            leading: const Icon(Icons.description),
+            title: const Text('Policies'),
             onTap: () => null,
           ),
           ListTile(
-            leading: Icon(Icons.exit_to_app),
-            title: Text('Exit'),
+            leading: const Icon(Icons.share),
+            title: const Text('share'),
+            onTap: () => null,
+          ),
+          ListTile(
+            leading: const Icon(Icons.exit_to_app),
+            title: const Text('Exit'),
             onTap: () {
               if (Platform.isAndroid) {
                 SystemNavigator.pop();

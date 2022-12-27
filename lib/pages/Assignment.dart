@@ -1,6 +1,6 @@
+// ignore_for_file: camel_case_types, file_names
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import 'home_page.dart';
 
@@ -15,28 +15,27 @@ class _asign_mentState extends State<asign_ment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 235, 241, 246),
+      backgroundColor: const Color.fromARGB(255, 235, 241, 246),
       appBar: AppBar(
         elevation: 10,
         backgroundColor: Colors.blue[600],
-        title: Text(' Assignments ! '),
+        title: const Text(' Assignments ! '),
         leading: GestureDetector(
-          child: Icon(
+          child: const Icon(
             Icons.arrow_back_ios_new_outlined,
             color: Colors.black,
           ),
           onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(
-                builder: (BuildContext context) => HomePage()));
+            Navigator.pop(context);
           },
         ),
         actions: <Widget>[
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.search_outlined,
                 color: Colors.black,
               )),

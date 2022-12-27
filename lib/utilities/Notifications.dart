@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_import, file_names, camel_case_types, implementation_imports
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -12,6 +14,6 @@ class Noti_fications extends StatefulWidget {
 class _Noti_ficationsState extends State<Noti_fications> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }

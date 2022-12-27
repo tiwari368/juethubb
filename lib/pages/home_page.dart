@@ -1,6 +1,7 @@
-import 'dart:ffi';
-
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:juethubb/main.dart';
 import 'package:juethubb/pages/Assignment.dart';
 import 'package:juethubb/pages/previousyear.dart';
 import 'package:juethubb/pages/tuorial.dart';
@@ -18,14 +19,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  @override
   var time = DateTime.now();
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Side_bar(),
+      drawer: const Side_bar(),
       appBar: AppBar(
         backgroundColor: Colors.blue[800],
-        title: Text('   JUET HUB ! '),
+        title: const Text('   JUET HUB ! '),
       ),
       backgroundColor: Colors.blue[800],
       body: SafeArea(
@@ -36,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
                     Row(
@@ -46,14 +48,14 @@ class _HomePageState extends State<HomePage> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'Heyy, FOLK!',
-                              style: TextStyle(
+                            const Text(
+                              "Heyy, JUETIAN'S!",
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 24,
                                   fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
                             Text(
@@ -70,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                               color: Colors.blue[500],
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            child: Icon(
+                            child: const Icon(
                               Icons.notifications,
                               color: Colors.white,
                             ),
@@ -78,13 +80,13 @@ class _HomePageState extends State<HomePage> {
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (BuildContext context) =>
-                                    Noti_fications()));
+                                    const Noti_fications()));
                           },
                         )
                       ],
                     ),
                     //====================================================================================================================================
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
 
@@ -94,18 +96,18 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.blue[600],
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      padding: EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(12),
                       child: Row(children: [
-                        Icon(
+                        const Icon(
                           Icons.search,
                           color: Colors.white,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
-                        Text(
+                        const Text(
                           'Search',
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                           ),
                         )
@@ -113,21 +115,21 @@ class _HomePageState extends State<HomePage> {
                     ),
                     //How Do you Feel,
                     //====================================================================================================================================
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'experiencing app to be ?',
+                        const Text(
+                          'Share your Experience with us',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.more_horiz,
                           color: Colors.white,
                         ),
@@ -135,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     //====================================================================================================================================
                     //4 differnt face/////////////////////////////////////////////////////////////////////////////
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
                     Row(
@@ -143,11 +145,11 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Column(
                           children: [
-                            Emotionalicon(emotionalface: '😀'),
-                            SizedBox(
+                            const Emotionalicon(emotionalface: '😀'),
+                            const SizedBox(
                               height: 8,
                             ),
-                            Text(
+                            const Text(
                               'Excellent',
                               style: TextStyle(color: Colors.white),
                             ),
@@ -155,11 +157,11 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Column(
                           children: [
-                            Emotionalicon(emotionalface: '🙂'),
-                            SizedBox(
+                            const Emotionalicon(emotionalface: '🙂'),
+                            const SizedBox(
                               height: 8,
                             ),
-                            Text(
+                            const Text(
                               'Well',
                               style: TextStyle(color: Colors.white),
                             ),
@@ -167,11 +169,11 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Column(
                           children: [
-                            Emotionalicon(emotionalface: '😬'),
-                            SizedBox(
+                            const Emotionalicon(emotionalface: '😬'),
+                            const SizedBox(
                               height: 8,
                             ),
-                            Text(
+                            const Text(
                               'Good',
                               style: TextStyle(color: Colors.white),
                             ),
@@ -179,13 +181,13 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Column(
                           children: [
-                            Emotionalicon(emotionalface: '😫'),
-                            SizedBox(
+                            const Emotionalicon(emotionalface: '😫'),
+                            const SizedBox(
                               height: 8,
                             ),
-                            Text(
+                            const Text(
                               'Bad',
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ],
                         ),
@@ -195,12 +197,12 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               //====================================================================================================================================
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Expanded(
                 child: Container(
-                  padding: EdgeInsets.all(25),
+                  padding: const EdgeInsets.all(25),
                   color: Colors.white,
                   child: Center(
                     child: Column(
@@ -209,17 +211,17 @@ class _HomePageState extends State<HomePage> {
                           //=============================================excercise heading======================================================================
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              'Materials...',
+                            const Text(
+                              'Materials ',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20),
                             ),
-                            Icon(Icons.more_horiz),
+                            const Icon(Icons.more_horiz),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         //=====================================list views of materials=========================================================================
@@ -227,34 +229,39 @@ class _HomePageState extends State<HomePage> {
                           child: ListView(
                             children: [
                               GestureDetector(
-                                child: Materialtile(
+                                child: const Materialtile(
                                   icon: Icon(Icons.favorite),
                                   materialname: 'Previous Year Papers',
+                                  subTitl: '4 Years..',
                                 ),
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (BuildContext context) =>
-                                          PrevYear()));
+                                          const PrevYear()));
                                 },
                               ),
                               GestureDetector(
-                                child: Materialtile(
-                                    icon: Icon(Icons.book_online_rounded),
-                                    materialname: 'Assignments'),
+                                child: const Materialtile(
+                                  icon: Icon(Icons.book_online_rounded),
+                                  materialname: 'Assignments',
+                                  subTitl: '4 Years..',
+                                ),
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (BuildContext context) =>
-                                          asign_ment()));
+                                          const asign_ment()));
                                 },
                               ),
                               GestureDetector(
-                                child: Materialtile(
-                                    icon: Icon(Icons.bookmark_add_sharp),
-                                    materialname: 'Tutorials'),
+                                child: const Materialtile(
+                                  icon: const Icon(Icons.bookmark_add_sharp),
+                                  materialname: 'Tutorials',
+                                  subTitl: '4 Years..',
+                                ),
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (BuildContext context) =>
-                                          Tutoriall()));
+                                          const Tutoriall()));
                                 },
                               ),
                             ],

@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:juethubb/pages/home_page.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
         const Duration(seconds: 5),
         () => Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => HomePage()),
+              MaterialPageRoute(builder: (context) => const HomePage()),
             ));
   }
 

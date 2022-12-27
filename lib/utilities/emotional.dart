@@ -1,6 +1,17 @@
-import 'dart:async';
-
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    show
+        BorderRadius,
+        BoxDecoration,
+        BuildContext,
+        Center,
+        Colors,
+        Container,
+        EdgeInsets,
+        Key,
+        StatelessWidget,
+        Text,
+        TextStyle,
+        Widget;
 
 class Emotionalicon extends StatelessWidget {
   final String emotionalface;
